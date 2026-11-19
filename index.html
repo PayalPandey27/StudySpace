@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudySpace - Student Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <h2 class="logo">StudySpace </h2>
+
+        <p class="menu-title">MENU</p>
+
+        <nav>
+            <a href="#dashboard" class="active" data-page="dashboard">
+                🏠 Dashboard
+            </a>
+
+            <a href="#tasks" data-page="tasks">
+                📚 My Tasks
+            </a>
+
+            <a href="#timetable" data-page="timetable">
+                📅 Timetable
+            </a>
+
+            <a href="#notes" data-page="notes">
+                📝 My Notes
+            </a>
+
+            <a href="#progress" data-page="progress">
+                📊 Progress
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>Stay focused!</p>
+            <span>Small steps, big dreams </span>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div>
+                <h1>Hello, Student! </h1>
+                <p>Welcome to your study space.</p>
+            </div>
+
+            <div class="profile">
+                 My Planner
+            </div>
+
+        </header>
+
+
+        <!-- ================================= -->
+        <!-- DASHBOARD SECTION -->
+        <!-- ================================= -->
+
+        <section class="page-section active-page" id="dashboard">
+
+            <h2 class="page-title">Dashboard 🏠</h2>
+
+            <!-- DASHBOARD CARDS -->
+            <div class="dashboard">
+
+                <div class="card">
+                    <h3>Today's Tasks</h3>
+                    <h2 id="totalTasks">0</h2>
+                    <p>Tasks planned for today</p>
+                </div>
+
+                <div class="card">
+                    <h3>Completed</h3>
+                    <h2 id="completedTasks">0</h2>
+                    <p>Tasks completed today</p>
+                </div>
+
+                <div class="card">
+                    <h3>Pending</h3>
+                    <h2 id="pendingTasks">0</h2>
+                    <p>Tasks left to complete</p>
+                </div>
+
+            </div>
+
+
+            <!-- MY SUBJECTS -->
+            <section class="section-box">
+
+                <h2>My Subjects 📚</h2>
+
+                <div class="subject-grid">
+
+                    <div class="subject-card">
+                        <span></span>
+                        <h3>Advance Java Programming</h3>
+                    </div>
+
+                    <div class="subject-card">
+                        <span></span>
+                        <h3>Computer Graphics</h3>
+                    </div>
+
+                    <div class="subject-card">
+                        <span></span>
+                        <h3>Data Mining</h3>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- MOTIVATION -->
+            <section class="motivation">
+
+                <h2>Keep Going! </h2>
+
+                <p>
+                    Believe in yourself.
+                    Every little effort counts.
+                </p>
+
+            </section>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- MY TASKS SECTION -->
+        <!-- ================================= -->
+
+        <section class="page-section" id="tasks">
+
+            <h2 class="page-title">Today's Study Plan </h2>
+
+            <p class="section-description">
+                Organise your daily study tasks and stay productive!
+            </p>
+
+            <div class="section-box">
+
+                <h2>Add New Task</h2>
+
+                <form id="taskForm" class="add-form">
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="Enter a new study task..."
+                        required
+                    >
+
+                    <select id="taskSubject" required>
+
+                        <option value="">Select Subject</option>
+
+                        <option>Advance Java Programming</option>
+
+                        <option>Computer Graphics</option>
+
+                        <option>Data Mining</option>
+
+                    </select>
+
+                    <button type="submit">+ Add Task</button>
+
+                </form>
+
+            </div>
+
+
+            <div class="section-box">
+
+                <h2>My Tasks 📚</h2>
+
+                <div id="taskList" class="task-list">
+
+                    <p class="empty-message">
+                        No tasks added yet. Start planning! 
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- TIMETABLE SECTION -->
+        <!-- ================================= -->
+
+        <section class="page-section" id="timetable">
+
+            <h2 class="page-title">My Timetable 📅</h2>
+
+            <p class="section-description">
+                Plan your study hours and organise your day.
+            </p>
+
+
+            <!-- SUGGESTED TIMETABLE -->
+            <div class="section-box suggestion-box">
+
+                <h2> Suggested Study Schedule</h2>
+
+                <div class="suggestion">
+                    <span>8:00 AM - 9:00 AM</span>
+                    <p>Advance Java Programming</p>
+                </div>
+
+                <div class="suggestion">
+                    <span>4:00 PM - 5:00 PM</span>
+                    <p>Computer Graphics</p>
+                </div>
+
+                <div class="suggestion">
+                    <span>6:00 PM - 7:00 PM</span>
+                    <p>Data Mining</p>
+                </div>
+
+                <p class="small-note">
+                    These are suggested time slots.
+                    You can create your own timetable below.
+                </p>
+
+            </div>
+
+
+            <!-- CUSTOM TIMETABLE -->
+            <div class="section-box">
+
+                <h2>Create Your Timetable</h2>
+
+                <form id="timetableForm" class="timetable-form">
+
+                    <input
+                        type="time"
+                        id="studyTime"
+                        required
+                    >
+
+                    <select id="studySubject" required>
+
+                        <option value="">Select Subject</option>
+
+                        <option>Advance Java Programming</option>
+
+                        <option>Computer Graphics</option>
+
+                        <option>Data Mining</option>
+
+                    </select>
+
+                    <input
+                        type="text"
+                        id="studyActivity"
+                        placeholder="Enter study activity..."
+                        required
+                    >
+
+                    <button type="submit">
+                        + Add to Timetable
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- TIMETABLE DISPLAY -->
+            <div class="section-box">
+
+                <h2>My Schedule</h2>
+
+                <div id="timetableList" class="timetable-list">
+
+                    <p class="empty-message">
+                        Your timetable will appear here. 
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- MY NOTES SECTION -->
+        <!-- ================================= -->
+
+        <section class="page-section" id="notes">
+
+            <h2 class="page-title">My Notes 📝</h2>
+
+            <p class="section-description">
+                Write and save your subject-wise study notes.
+            </p>
+
+
+            <div class="notes-container">
+
+                <div class="note-card">
+
+                    <h3> Advance Java Programming</h3>
+
+                    <textarea
+                        id="javaNotes"
+                        placeholder="Write your Advance Java notes here..."
+                    ></textarea>
+
+                    <p class="save-status" id="javaStatus">
+                        Your notes are saved automatically.
+                    </p>
+
+                </div>
+
+
+                <div class="note-card">
+
+                    <h3> Computer Graphics</h3>
+
+                    <textarea
+                        id="graphicsNotes"
+                        placeholder="Write your Computer Graphics notes here..."
+                    ></textarea>
+
+                    <p class="save-status" id="graphicsStatus">
+                        Your notes are saved automatically.
+                    </p>
+
+                </div>
+
+
+                <div class="note-card">
+
+                    <h3> Data Mining</h3>
+
+                    <textarea
+                        id="dataMiningNotes"
+                        placeholder="Write your Data Mining notes here..."
+                    ></textarea>
+
+                    <p class="save-status" id="dataMiningStatus">
+                        Your notes are saved automatically.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- PROGRESS SECTION -->
+        <!-- ================================= -->
+
+        <section class="page-section" id="progress">
+
+            <h2 class="page-title">My Daily Progress 📊</h2>
+
+            <p class="section-description">
+                Track your daily study performance.
+            </p>
+
+
+            <div class="section-box progress-container">
+
+                <div class="progress-details">
+
+                    <h3>Today's Completion</h3>
+
+                    <h2 id="progressPercentage">0%</h2>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div id="progressFill"></div>
+
+                </div>
+
+
+                <p id="progressMessage">
+                    Start completing your tasks to see your progress! 
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
